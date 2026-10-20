@@ -1,0 +1,54 @@
+/* Seelsorgliche Begleitung — Videos in Karten und Zitat-Band (20.10.2026).
+   Elementors eigenes CSS bleibt unberührt; alles hier hängt an zusätzlichen Klassen. */
+
+/* Karten: Video blendet beim Drüberfahren ein (Handy: sobald die Karte im Bild steht) */
+.sb-kv { position: relative; overflow: hidden; isolation: isolate; }
+.sb-kv-video,
+.sb-kv-schleier {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; z-index: -1; pointer-events: none;
+  border-radius: inherit; transition: opacity .7s ease;
+}
+.sb-kv-schleier { background: linear-gradient(180deg, rgba(30, 34, 28, .42) 0%, rgba(30, 34, 28, .74) 100%); }
+.sb-an .sb-kv-video,
+.sb-an .sb-kv-schleier { opacity: 1; }
+
+.sb-kv .elementor-image-box-title,
+.sb-kv .elementor-image-box-description,
+.sb-kv .sba-ct-main,
+.sb-kv .sba-ct-sub,
+.sb-kv .sba-cp,
+.sb-kv .sba-icon,
+.sb-kv .sba-cn { transition: color .5s ease; }
+.sb-an .elementor-image-box-title,
+.sb-an .elementor-image-box-description,
+.sb-an .sba-ct-main,
+.sb-an .sba-ct-sub,
+.sb-an .sba-cp { color: #fff !important; }
+.sb-an .sba-icon { color: #DCE5D5; }
+.sb-an .sba-cn { color: rgba(255, 255, 255, .14); }
+.sb-an .sba-ct-sub::before { background: #DCE5D5; }
+
+/* Icons der Lebensphasen sind PNGs mit weißem Quadrat: rund ausschneiden wie der Kreis im Icon */
+.sb-kv .elementor-image-box-img img { border-radius: 50%; }
+
+/* Zitat-Band: Weg durchs Tal hinter „Das Leben wird vorwärts gelebt …“ */
+.sb-zitat { position: relative; overflow: hidden; isolation: isolate; }
+.sb-zitat-video,
+.sb-zitat-schleier { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.sb-zitat-video { object-fit: cover; z-index: -2; }
+.sb-zitat-schleier { z-index: -1; background: linear-gradient(180deg, rgba(28, 32, 26, .58) 0%, rgba(28, 32, 26, .5) 50%, rgba(28, 32, 26, .64) 100%); }
+.sb-zitat .elementor-heading-title { color: #fff !important; }
+.sb-zitat .sb-zitat-deko { display: none; }
+.sb-zitat .sb-zitat-zeichen img { filter: brightness(0) invert(1); }
+.sb-zitat .elementor-icon svg,
+.sb-zitat .elementor-icon i { fill: #fff; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-kv-video, .sb-kv-schleier, .sb-kv * { transition: none; }
+}
+
+/* Handy: Zitat-Band braucht Luft über dem Anführungszeichen und unter dem Logo */
+@media (max-width: 767px) {
+  .sb-zitat.e-con { --padding-top: 64px; --padding-bottom: 72px; padding-top: 64px; padding-bottom: 72px; }
+}
