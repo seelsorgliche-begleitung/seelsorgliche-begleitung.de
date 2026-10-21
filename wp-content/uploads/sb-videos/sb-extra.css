@@ -95,3 +95,19 @@ body.page-id-21 .page-content > .elementor, body.page-id-24 .page-content > .ele
   body.page-id-21 .page-content h4, body.page-id-24 .page-content h4 { font-size: 18px; }
   body.page-id-21 .page-content > .elementor, body.page-id-24 .page-content > .elementor { padding-top: 150px; }
 }
+
+/* Apple-Regeln 21.10.2026: Tippflächen ≥ 44 px, aktiver Link lesbar, Druck-Rückmeldung, kurze Übergänge, Laufweite */
+.elementor-nav-menu a.elementor-item { min-height: 44px; min-width: 44px; display: flex; align-items: center; box-sizing: border-box; }
+.elementor-icon-list-item > a { min-height: 44px; display: inline-flex; align-items: center; }
+.elementor-location-footer .elementor-item-active,
+.elementor-location-footer a.elementor-item.elementor-item-active { color: inherit !important; opacity: 1; }
+.sb-senden:active, .sb-karte button:active { transform: scale(.98); }
+.sb-kv-video, .sb-kv-schleier { transition-duration: .35s !important; }
+.sb-kv .elementor-image-box-title, .sb-kv .elementor-image-box-description, .sb-kv .sba-ct-main,
+.sb-kv .sba-ct-sub, .sb-kv .sba-cp, .sb-kv .sba-icon, .sb-kv .sba-cn { transition-duration: .3s !important; }
+.sb-karte span, .sb-karte a, .sb-ok span, .sb-ok a { letter-spacing: .01em; }
+.sba-cn, .sba-ct-main { letter-spacing: -.01em; }
+.sba .sba-cn, .sba .sba-ct-main { letter-spacing: -.01em; }
+.elementor-background-video-container, .elementor-headline-dynamic-wrapper { transition-duration: .35s !important; }
+.sb-karte p, .sb-ok p { letter-spacing: .01em !important; }
+.sba .sba-h2, .sba .sba-ct-main, .sb-anfrage h2 { text-wrap: balance; }
