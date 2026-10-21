@@ -1625,6 +1625,77 @@ sondern die Begegnung.</h6>				</div>
 			</div>
 
 	
+<section id="anfrage" class="sb-anfrage" aria-labelledby="sb-anfrage-titel">
+<style>
+.sb-anfrage { background: #fff; padding: 24px 0 120px; box-sizing: border-box; }
+.sb-anfrage * { box-sizing: border-box; }
+.sb-anfrage-in { max-width: 1440px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+.sb-anfrage-lbl { display: flex; align-items: center; gap: 10px; color: #7C6A86; font: 400 14px/1.4 "Josefin Sans", sans-serif; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 18px; }
+.sb-anfrage-lbl::before { content: ''; width: 1px; height: 14px; background: #7C6A86; }
+.sb-anfrage h2 { font: 700 52px/1.08 "Cormorant Garamond", Georgia, serif; color: #4A4A4A; margin: 0 0 18px; }
+.sb-anfrage-text { font: 400 16px/1.6 "Josefin Sans", sans-serif; color: #4A4A4A; margin: 0; max-width: 420px; }
+.sb-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+.sb-feld { display: flex; flex-direction: column; gap: 8px; }
+.sb-feld.voll { grid-column: 1 / -1; }
+.sb-feld label { font: 400 14px/1.3 "Josefin Sans", sans-serif; color: #4A4A4A; letter-spacing: .02em; }
+.sb-anfrage .sb-feld input, .sb-anfrage .sb-feld textarea {
+  font: 400 16px/1.5 "Josefin Sans", sans-serif !important; color: #3F3F3F !important; background: #F4F2EE !important;
+  border: 1px solid #E2DED6 !important; border-radius: 10px !important; padding: 14px 16px !important; width: 100%;
+  box-shadow: none !important; transition: border-color .25s ease, background .25s ease;
+}
+.sb-feld textarea { min-height: 150px; resize: vertical; }
+.sb-anfrage .sb-feld input:hover, .sb-anfrage .sb-feld textarea:hover { border-color: #C9C2B6 !important; }
+.sb-anfrage .sb-feld input:focus, .sb-anfrage .sb-feld textarea:focus { outline: none; border-color: #7C6A86 !important; background: #fff !important; }
+.sb-ok { grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font: 400 14px/1.55 "Josefin Sans", sans-serif; color: #4A4A4A; }
+.sb-ok input { width: 20px; height: 20px; margin-top: 1px; accent-color: #4F5B4B; flex: none; }
+.sb-ok a { color: inherit; }
+.sb-topf { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.sb-senden { grid-column: 1 / -1; justify-self: start; cursor: pointer; border: 0; border-radius: 0; background: #7C6A86; color: #fff;
+  font: 400 15px/1 "Josefin Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 18px 30px; transition: background .25s ease, transform .25s ease; }
+.sb-senden:hover { background: #4F5B4B; transform: translateY(-2px); }
+.sb-meldung { grid-column: 1 / -1; display: none; border-radius: 10px; padding: 16px 18px; font: 400 15px/1.55 "Josefin Sans", sans-serif; }
+.sb-meldung.danke { background: #E9EEE6; color: #33402F; }
+.sb-meldung.fehler { background: #F4E9E9; color: #6B2E2E; }
+.sb-meldung a { color: inherit; }
+@media (max-width: 1024px) { .sb-anfrage-in { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 767px) {
+  .sb-anfrage { padding: 8px 0 88px; }
+  .sb-anfrage-in { padding: 0 25px; }
+  .sb-anfrage h2 { font-size: 36px; }
+  .sb-form { grid-template-columns: 1fr; }
+  .sb-senden { justify-self: stretch; text-align: center; }
+}
+</style>
+<div class="sb-anfrage-in">
+  <div>
+    <p class="sb-anfrage-lbl">Nachricht</p>
+    <h2 id="sb-anfrage-titel">Schreiben Sie mir.</h2>
+    <p class="sb-anfrage-text">Wenn Ihnen ein Anruf gerade zu viel ist, können Sie mir auch hier schreiben. Ihre Nachricht kommt direkt bei mir an, und ich melde mich bei Ihnen.</p>
+  </div>
+  <form class="sb-form" method="post" action="https://kunden-formular.handwerksmanufaktur.workers.dev/seelsorgliche-begleitung">
+    <p class="sb-meldung danke" id="sb-danke" role="status">Danke für Ihre Nachricht. Ich melde mich bei Ihnen.</p>
+    <p class="sb-meldung fehler" id="sb-fehler" role="alert">Das hat leider nicht geklappt. Bitte rufen Sie mich an unter <a href="tel:+4917696582679">0176 96582679</a> oder schreiben Sie an <a href="mailto:kontakt@seelsorgliche-begleitung.de">kontakt@seelsorgliche-begleitung.de</a>.</p>
+    <div class="sb-feld"><label for="sb-name">Name *</label><input id="sb-name" name="name" autocomplete="name" required></div>
+    <div class="sb-feld"><label for="sb-mail">E-Mail *</label><input id="sb-mail" name="mail" type="email" autocomplete="email" required></div>
+    <div class="sb-feld voll"><label for="sb-tel">Telefon (wenn Sie einen Rückruf möchten)</label><input id="sb-tel" name="telefon" type="tel" autocomplete="tel"></div>
+    <div class="sb-feld voll"><label for="sb-nachricht">Ihre Nachricht *</label><textarea id="sb-nachricht" name="nachricht" required></textarea></div>
+    <div class="sb-topf" aria-hidden="true"><label for="sb-url">Website</label><input id="sb-url" name="firma_url" tabindex="-1" autocomplete="off"></div>
+    <input type="hidden" name="ts" value="">
+    <label class="sb-ok"><input type="checkbox" required> <span>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden. Mehr dazu in der <a href="/datenschutz/">Datenschutzerklärung</a>.</span></label>
+    <button class="sb-senden" type="submit">Nachricht senden</button>
+  </form>
+</div>
+<script>
+(function () {
+  var f = document.querySelector('.sb-form'); if (!f) return;
+  f.ts.value = String(Date.now());
+  var q = new URLSearchParams(location.search);
+  var m = q.get('gesendet') ? 'sb-danke' : (q.get('fehler') ? 'sb-fehler' : null);
+  if (m) { document.getElementById(m).style.display = 'block'; if (q.get('gesendet')) f.querySelectorAll('.sb-feld, .sb-ok, .sb-senden').forEach(function (e) { e.style.display = 'none'; }); }
+})();
+</script>
+</section>
+
 </main>
 
 			<footer data-elementor-type="footer" data-elementor-id="166" class="elementor elementor-166 elementor-location-footer" data-elementor-post-type="elementor_library">
