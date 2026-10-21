@@ -52,3 +52,10 @@
 @media (max-width: 767px) {
   .sb-zitat.e-con { --padding-top: 64px; --padding-bottom: 72px; padding-top: 64px; padding-bottom: 72px; }
 }
+
+/* Handy-Feinschliff 21.10.2026: nichts unter 13 px, Fußzeilen-Links gut treffbar */
+.sba-ct-sub, .sba-cta-q, .sba .sba-btn, .sba a.sba-btn.sba-btn:link, .sba a.sba-btn.sba-btn:visited { font-size: 13px !important; }
+@media (max-width: 767px) {
+  .elementor-location-footer .elementor-icon-list-item > a,
+  .elementor-location-footer .elementor-nav-menu a { display: inline-flex; align-items: center; min-height: 40px; }
+}
