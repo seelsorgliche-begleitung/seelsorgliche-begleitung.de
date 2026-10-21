@@ -59,3 +59,39 @@
   .elementor-location-footer .elementor-icon-list-item > a,
   .elementor-location-footer .elementor-nav-menu a { display: inline-flex; align-items: center; min-height: 40px; }
 }
+
+/* Rechtsseiten (Impressum page-id-21, Datenschutz page-id-24): Inhalt unter den Kopf, auf den Seitenrand der Startseite,
+   lesbare Zeilenlänge, Menü dunkel statt hellgrau auf Weiß, Überschriften ohne Waisen */
+body.page-id-21 .page-content > .elementor,
+body.page-id-24 .page-content > .elementor { max-width: 980px; margin: 0 auto; padding: 220px 40px 96px; box-sizing: border-box; }
+body.page-id-21 .page-content > .elementor *,
+body.page-id-24 .page-content > .elementor * { max-width: 100%; overflow-wrap: anywhere; box-sizing: border-box; }
+body.page-id-21 .page-content > .elementor .e-con,
+body.page-id-24 .page-content > .elementor .e-con { --padding-left: 0px; --padding-right: 0px; padding-left: 0; padding-right: 0; --width: 100%; }
+body.page-id-21 .elementor-location-header .elementor-nav-menu a,
+body.page-id-24 .elementor-location-header .elementor-nav-menu a { color: #4A4A4A !important; }
+body.page-id-21 .elementor-location-header .elementor-menu-toggle,
+body.page-id-24 .elementor-location-header .elementor-menu-toggle { color: #4A4A4A !important; fill: #4A4A4A !important; }
+body.page-id-21 .elementor-location-header .elementor-menu-toggle svg,
+body.page-id-24 .elementor-location-header .elementor-menu-toggle svg { fill: #4A4A4A !important; }
+body.page-id-21 h1, body.page-id-21 h2, body.page-id-21 h3, body.page-id-21 h4,
+body.page-id-24 h1, body.page-id-24 h2, body.page-id-24 h3, body.page-id-24 h4 { text-wrap: balance; hyphens: manual; }
+@media (max-width: 767px) {
+  body.page-id-21 .page-content > .elementor,
+  body.page-id-24 .page-content > .elementor { padding: 150px 25px 72px; }
+}
+body.page-id-21 .page-content h1, body.page-id-21 .page-content h2, body.page-id-21 .page-content h3, body.page-id-21 .page-content h4,
+body.page-id-24 .page-content h1, body.page-id-24 .page-content h2, body.page-id-24 .page-content h3, body.page-id-24 .page-content h4 {
+  font-family: "Cormorant Garamond", Georgia, serif !important; font-weight: 700; color: #4A4A4A; text-transform: none; line-height: 1.15; margin: 1.4em 0 .5em; }
+body.page-id-21 .page-content h1, body.page-id-24 .page-content h1 { font-size: 56px; margin-top: 0; }
+body.page-id-21 .page-content h2, body.page-id-24 .page-content h2 { font-size: 34px; }
+body.page-id-21 .page-content h3, body.page-id-24 .page-content h3 { font-size: 26px; }
+body.page-id-21 .page-content h4, body.page-id-24 .page-content h4 { font-size: 21px; }
+body.page-id-21 .page-content > .elementor, body.page-id-24 .page-content > .elementor { padding-top: 190px; }
+@media (max-width: 767px) {
+  body.page-id-21 .page-content h1, body.page-id-24 .page-content h1 { font-size: 34px; }
+  body.page-id-21 .page-content h2, body.page-id-24 .page-content h2 { font-size: 26px; }
+  body.page-id-21 .page-content h3, body.page-id-24 .page-content h3 { font-size: 21px; }
+  body.page-id-21 .page-content h4, body.page-id-24 .page-content h4 { font-size: 18px; }
+  body.page-id-21 .page-content > .elementor, body.page-id-24 .page-content > .elementor { padding-top: 150px; }
+}
