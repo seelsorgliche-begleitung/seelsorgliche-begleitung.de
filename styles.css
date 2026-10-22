@@ -410,7 +410,7 @@ footer{background:var(--tinte);color:rgba(244,242,238,.78);padding:88px 0 40px;p
 
 /* ---------- Breitbild: Video über die volle Breite, Überschrift darauf */
 .breitbild{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:21/9;background:var(--tinte);isolation:isolate}
-.breitbild video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.breitbild video,.breitbild-grund{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .breitbild-schleier{position:absolute;inset:0;background:linear-gradient(200deg,rgba(38,45,36,0) 30%,rgba(38,45,36,.72) 100%)}
 .breitbild-text{position:absolute;left:56px;bottom:52px;width:min(640px,calc(100% - 420px));color:#fff;z-index:1}
 .breitbild-text h2{color:#fff;font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.08;margin-top:12px}
