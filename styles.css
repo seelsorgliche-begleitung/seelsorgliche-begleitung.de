@@ -189,7 +189,8 @@ html.ankunft .blende{visibility:visible;opacity:1;animation:blendeWeg .6s var(--
 .krumen .ic{width:14px;height:14px}
 
 /* ---------- Statement (füllt sich wortweise durch die Bildmitte, beide Richtungen) */
-.statement{--p:0;text-align:center;padding:184px 0 128px}
+.statement{--p:0;text-align:center;padding:120px 0}
+.hero + .statement{padding:184px 0 128px}
 .statement h2{font-size:clamp(1.9rem,4.2vw,3.5rem);line-height:1.15;max-width:22ch;margin:0 auto;letter-spacing:-.015em}
 .statement h2 i{font-style:normal;opacity:.18;transition:opacity .3s}
 .statement h2 i.an{opacity:1}
@@ -378,7 +379,7 @@ html.kein-js .faq-antwort{grid-template-rows:1fr}
 .form-meldung[data-art="ok"]{background:rgba(79,91,75,.1);color:var(--salbei-tief);font-weight:500}
 .form-meldung a{color:inherit;text-decoration:underline;font-weight:500}
 /* Karte erst nach Klick (Zwei-Klick) */
-.karte-platz{position:relative;aspect-ratio:21/9;border-radius:var(--r);overflow:hidden;background:var(--creme-2);display:grid;place-items:center;min-height:380px}
+.karte-platz{position:relative;width:100%;aspect-ratio:21/9;border-radius:var(--r);overflow:hidden;background:var(--creme-2);display:grid;place-items:center;min-height:380px}
 .karte-platz>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.6)}
 .karte-platz iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .karte-hinweis{position:relative;background:#fff;border-radius:var(--r-s);padding:30px 28px;text-align:center;display:grid;justify-items:center;gap:8px;max-width:380px;box-shadow:0 24px 48px -24px rgba(38,45,36,.4)}
@@ -405,6 +406,7 @@ footer{background:var(--tinte);color:rgba(244,242,238,.78);padding:88px 0 40px;p
 .fuss-unten{margin-top:56px;padding-top:20px;border-top:1px solid var(--linie-hell);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;letter-spacing:.03em;color:rgba(244,242,238,.6)}
 .fuss-unten a{min-height:44px;display:inline-flex;align-items:center;padding:0 8px;transition:color var(--schnell)} .fuss-unten a:hover{color:#fff}
 .fuss-unten span:last-child a:first-child{margin-left:-8px}
+.fuss-mitte a{padding:0}
 
 /* ---------- Breitbild: Video über die volle Breite, Überschrift darauf */
 .breitbild{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:21/9;background:var(--tinte);isolation:isolate}
@@ -433,6 +435,34 @@ footer{background:var(--tinte);color:rgba(244,242,238,.78);padding:88px 0 40px;p
 }
 .cta .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.85)}
 
+/* ---------- Aktuell: zwei Angebote als Karten, Hinweis im Einstieg */
+.aktuell-band{background:var(--tinte);color:rgba(244,242,238,.86);position:relative}
+.aktuell-band .kicker{color:var(--gold)}
+.aktuell-band .kopf h2{color:#fff}
+.aktuell-band .kopf .lead{color:rgba(244,242,238,.78)}
+.aktuell-band .ak-karte{box-shadow:0 30px 60px -34px rgba(0,0,0,.6)}
+.aktuell-band .ak-text{color:var(--text)}
+.aktuell-band .ak-text .kicker{color:var(--salbei)}
+nav.haupt a.nav-neu{display:flex;align-items:center;gap:8px}
+nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,175,143,.28)}
+.hero-hinweis{display:inline-flex;align-items:center;gap:12px;margin-top:26px;min-height:44px;font:500 14px/1.4 var(--sans);letter-spacing:.04em;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.35);transition:color var(--schnell),border-color var(--schnell)}
+.hero-hinweis:hover{color:#fff;border-color:var(--gold)}
+.hh-punkt{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 0 4px rgba(201,175,143,.25)}
+.ak-raster{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
+.ak-karte{background:#fff;border-radius:var(--r-s);overflow:hidden;display:grid;grid-template-rows:auto 1fr;box-shadow:0 24px 48px -32px rgba(38,45,36,.35);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.ak-karte:hover{transform:translateY(-4px);box-shadow:0 30px 56px -30px rgba(38,45,36,.45)}
+.ak-bild{aspect-ratio:16/10;overflow:hidden;background:var(--creme-2)}
+.ak-bild video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease)}
+.ak-karte:hover .ak-bild video{transform:scale(1.03)}
+.ak-text{padding:36px 40px 40px;display:flex;flex-direction:column}
+.ak-text h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.1;margin:0 0 16px;color:var(--tinte)}
+.ak-text p{margin:0}.ak-text p+p{margin-top:12px}
+.ak-fuss{margin-top:auto;padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ak-termin{display:inline-flex;align-items:center;gap:10px;font:500 14px/1.3 var(--sans);letter-spacing:.02em;color:var(--salbei-tief)}
+.ak-termin .ic{width:20px;height:20px;color:var(--gold-text)}
+.ak-termin small{display:block;font:400 13px/1.4 var(--sans);color:var(--grau);letter-spacing:.02em;margin-top:2px}
+@media (max-width:900px){.ak-raster{grid-template-columns:1fr;gap:24px}.ak-text{padding:28px 24px 30px}.ak-fuss .btn{width:100%;justify-content:center}}
+
 /* ---------- WhatsApp-Knopf unten rechts (fährt das Wort aus) */
 .wa-knopf{position:fixed;right:22px;bottom:22px;z-index:50;display:inline-flex;align-items:center;gap:0;height:54px;padding:0 15px;border-radius:999px;background:var(--lila);color:#fff;box-shadow:0 14px 30px -12px rgba(38,45,36,.5);transition:background var(--schnell),gap var(--schnell),transform var(--schnell) var(--ease)}
 .wa-knopf .ic{width:24px;height:24px}
@@ -442,7 +472,7 @@ footer{background:var(--tinte);color:rgba(244,242,238,.78);padding:88px 0 40px;p
 .wa-knopf:active{transform:scale(var(--druck));transition-duration:.1s;opacity:1}
 
 /* ---------- Textseiten (Impressum, Datenschutz) */
-.textseite{padding-bottom:120px}
+.textseite{padding-top:88px;padding-bottom:120px}
 .rechtstext{max-width:860px;padding-top:64px}
 .rechtstext h2{font-size:2rem;margin:48px 0 14px}
 .rechtstext h3{font-size:1.5rem;margin:30px 0 10px}
@@ -479,7 +509,8 @@ footer{background:var(--tinte);color:rgba(244,242,238,.78);padding:88px 0 40px;p
   section{padding:88px 0}
   .hero-inhalt{padding-top:150px;padding-bottom:120px}
   .hero-klein .hero-inhalt{padding-top:140px;padding-bottom:64px}
-  .statement{padding:128px 0 96px}
+  .statement{padding:96px 0}
+  .hero + .statement{padding:128px 0 96px}
   .zitat,.band,.cta{padding:96px 0;min-height:0}
   .kopf-zeile{align-items:start;flex-direction:column;gap:12px}
   .rechtstext{padding-top:40px}
