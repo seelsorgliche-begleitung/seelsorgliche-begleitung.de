@@ -133,11 +133,11 @@ body.dunkel-oben .wegbahn .fluss{stroke:var(--gold)}
 .intro{position:fixed;inset:0;z-index:200;background:var(--creme);display:grid;place-items:center;color:var(--salbei);transition:opacity .5s var(--ease),visibility 0s .5s}
 .intro.weg{opacity:0;visibility:hidden}
 .intro svg{width:min(34vw,200px);height:auto;overflow:visible}
-.intro .haar{stroke-dasharray:1;stroke-dashoffset:1;animation:zeichnen 1.2s var(--ease) .15s forwards}
-.intro .haar+.haar{animation-delay:.9s}
-.intro .punkt{transform:scale(0);transform-origin:center;transform-box:fill-box;animation:setzen .5s var(--ease) 1.9s forwards}
-.intro .punkt+.punkt{animation-delay:2.05s}
-.intro .wort{position:absolute;bottom:17vh;left:0;right:0;text-align:center;font:300 clamp(1.1rem,2.6vw,1.6rem)/1 var(--serif);letter-spacing:.32em;text-transform:uppercase;color:var(--salbei-tief);opacity:0;animation:auftauchen .8s var(--ease) 2.2s forwards;padding:0 20px}
+.intro .haar{stroke-dasharray:1;stroke-dashoffset:1;animation:zeichnen .8s var(--ease) .1s forwards}
+.intro .haar+.haar{animation-delay:.5s}
+.intro .punkt{transform:scale(0);transform-origin:center;transform-box:fill-box;animation:setzen .4s var(--ease) 1s forwards}
+.intro .punkt+.punkt{animation-delay:1.1s}
+.intro .wort{position:absolute;bottom:17vh;left:0;right:0;text-align:center;font:300 clamp(1.1rem,2.6vw,1.6rem)/1 var(--serif);letter-spacing:.32em;text-transform:uppercase;color:var(--salbei-tief);opacity:0;animation:auftauchen .6s var(--ease) 1s forwards;padding:0 20px}
 @keyframes zeichnen{to{stroke-dashoffset:0}}
 @keyframes setzen{from{transform:scale(0)}60%{transform:scale(1.25)}to{transform:scale(1)}}
 @keyframes auftauchen{from{opacity:0;transform:translateY(8px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}

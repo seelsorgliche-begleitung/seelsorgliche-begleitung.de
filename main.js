@@ -26,8 +26,8 @@ if (intro) {
   if (document.documentElement.classList.contains('ankunft') || ruhig) intro.remove();
   else {
     document.body.style.overflow = 'hidden';
-    setTimeout(() => { intro.classList.add('weg'); document.body.style.overflow = ''; }, 2900);
-    setTimeout(() => intro.remove(), 3600);
+    setTimeout(() => { intro.classList.add('weg'); document.body.style.overflow = ''; }, 1700);
+    setTimeout(() => intro.remove(), 2300);
   }
 }
 
