@@ -154,6 +154,10 @@ html.ankunft .blende{visibility:visible;opacity:1;animation:blendeWeg .6s var(--
 .js .rev{opacity:0;translate:0 22px;filter:blur(3px);transition:opacity .4s var(--ease),translate .4s var(--ease),filter .4s var(--ease)}
 .js .rev.da{opacity:1;translate:none;filter:blur(0)}
 .js .rev.v2{transition-delay:.1s}.js .rev.v3{transition-delay:.2s}.js .rev.v4{transition-delay:.3s}.js .rev.v5{transition-delay:.4s}
+/* Hero-Text ist ab dem ersten Bild sichtbar (größtes Element auf dem Handy, LCP): nur ein kurzes Gleiten, kein Ausblenden */
+.js .hero .rev{opacity:1;filter:none;translate:none;transition:none;animation:heroRein .5s var(--ease) both}
+.js .hero .rev.v2{animation-delay:.08s}.js .hero .rev.v3{animation-delay:.16s}
+@keyframes heroRein{from{transform:translateY(14px)}to{transform:none}}
 .js .worte i{display:inline-block;font-style:inherit;opacity:0;transform:translateY(.4em);filter:blur(4px);transition:opacity .4s var(--ease),transform .4s var(--ease),filter .4s var(--ease);transition-delay:calc(var(--i) * .045s)}
 .js .worte.da i{opacity:1;transform:none;filter:blur(0)}
 /* Bilder öffnen sich weich: Rahmen weitet sich, das Motiv kommt näher */
