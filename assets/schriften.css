@@ -1,0 +1,6 @@
+/* Schriften lokal — keine Verbindung nach draußen. Cormorant Garamond Light (300, wie auf der bisherigen Seite) und Josefin Sans als variable Schrift (300–600). */
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300;font-display:swap;src:url(font/cormorant-300.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:300;font-display:swap;src:url(font/cormorant-300i.woff2) format("woff2")}
+@font-face{font-family:"Josefin Sans";font-style:normal;font-weight:100 700;font-display:swap;src:url(font/josefin-var.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:86%;ascent-override:90%;descent-override:26%;line-gap-override:0%}
+@font-face{font-family:"Josefin Fallback";src:local("Helvetica Neue"),local("Arial");size-adjust:101%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
