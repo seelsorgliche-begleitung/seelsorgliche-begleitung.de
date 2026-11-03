@@ -535,6 +535,49 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
   .karte-platz{aspect-ratio:auto;min-height:0;padding:28px 16px}
   .wenn li{font-size:1.25rem}
   .cta .oder a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+  /* Hero am Handy: Luft unter dem Kopf (.wrap setzt sonst padding-top auf 0), unten nur so viel, dass der WhatsApp-Knopf frei bleibt */
+  .hero-inhalt{padding-top:112px;padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+  .hero-klein .hero-inhalt{padding-top:112px;padding-bottom:64px}
+  .hero .lead{margin:18px 0 26px}
+  .hero .knoepfe,.cta .knoepfe{flex-direction:column;gap:12px}
+  .hero .knoepfe .btn,.cta .knoepfe .btn{width:100%;justify-content:center}
+  .cta .knoepfe{max-width:340px;margin-inline:auto}
+  .hero-hinweis{margin-top:22px}
+  /* Großbuchstaben-Zeilen dürfen umbrechen, ohne dass die Zeilen ineinanderlaufen */
+  .kicker{line-height:1.55;letter-spacing:.18em;align-items:flex-start}
+  .kicker::before{margin-top:calc(.775em - 3px)}
+  .angebot .unter,.zitat cite,.band cite{line-height:1.5}
+  .text-link{line-height:1.4}
+  /* Lebensphasen auf der Startseite als ruhige Zeilen statt hoher leerer Karten */
+  .lp-raster.klein{gap:10px}
+  .lp-raster.klein .lp-karte{min-height:0}
+  .lp-raster.klein .lp-text{flex-direction:row;align-items:center;gap:16px;padding:16px 64px 16px 16px;min-height:76px}
+  .lp-raster.klein .lp-ico{margin:0;flex:none;width:44px;height:44px}
+  .lp-raster.klein h3{margin:0;font-size:1.3rem;line-height:1.2}
+  .lp-raster.klein .lp-pfeil{top:50%;margin-top:-18px;right:16px}
+  .lp-karte{min-height:0}.lp-text{padding:26px 22px}.lp-karte h3{margin-top:22px}
+  /* Typo-Hierarchie am Handy: Überschrift trägt (Cormorant 500), Fließtext leiser (Josefin 300, dunkler für Kontrast),
+     damit nie eine dünne Überschrift über kleinerem, dickerem Text steht */
+  h1,h2,h3,h4,.wenn li,.menu-flaeche li a,.ak-text h3,.marke b,.zitat blockquote p,.band blockquote p,.faq-frage,.zl .was,.karte-hinweis b,.fuss h3,.wenn-weg li{font-weight:500}
+  .ak-text p,.duo p{color:#3d3d3a}
+  h1{letter-spacing:-.025em}
+  h2{font-size:2rem;line-height:1.12}
+  h3{font-size:1.6rem;line-height:1.16}
+  .ak-text h3{font-size:1.85rem;margin-bottom:14px}
+  body,p,.lead{font-weight:300}
+  body{color:#3d3d3a}
+  p{line-height:1.65}
+  .lead{color:#55554f}
+  .hero .lead,.cta p{font-weight:300}
+  .ak-text p{font-size:17px}
+  .ak-termin{font-weight:500}
+}
+/* Touch: Einblenden ohne Unschärfe-Filter (der ruckelt beim schnellen Scrollen am iPhone), kürzerer Weg */
+@media (hover:none),(max-width:900px){
+  .js .rev{filter:none;translate:0 14px;transition:opacity .45s var(--ease),translate .45s var(--ease)}
+  .js .rev.da{filter:none}
+  .js .rev.v2{transition-delay:.06s}.js .rev.v3{transition-delay:.12s}.js .rev.v4{transition-delay:.18s}.js .rev.v5{transition-delay:.24s}
+  .lp-karte.sb-an{transform:none}
 }
 
 /* ---------- Zugänglichkeit: weniger Bewegung, weniger Transparenz, mehr Kontrast */

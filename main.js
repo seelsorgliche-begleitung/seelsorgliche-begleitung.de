@@ -266,8 +266,8 @@ document.querySelectorAll('form.formular[action]').forEach(form => {
     if (fehlend.length) {
       e.preventDefault();
       fehlend.forEach(f => f.classList.add('fehlt'));
-      const namen = fehlend.map(f => f.type === 'checkbox' ? 'Ihre Einwilligung' : (f.labels && f.labels[0] ? f.labels[0].textContent.replace(' *', '') : 'ein Feld'));
-      zeigen('fehler', [text(fehlend.length === 1 ? 'Da fehlt noch etwas: ' + namen[0] + '.' : 'Bitte füllen Sie noch aus: ' + namen.join(', ') + '.')]);
+      const namen = fehlend.map(f => f.type === 'checkbox' ? 'deine Einwilligung' : (f.labels && f.labels[0] ? f.labels[0].textContent.replace(' *', '') : 'ein Feld'));
+      zeigen('fehler', [text(fehlend.length === 1 ? 'Da fehlt noch etwas: ' + namen[0] + '.' : 'Bitte füll noch aus: ' + namen.join(', ') + '.')]);
       fehlend[0].focus();
       return;
     }
@@ -277,11 +277,11 @@ document.querySelectorAll('form.formular[action]').forEach(form => {
   const q = new URLSearchParams(location.search);
   if (q.has('gesendet') || q.has('fehler')) {
     if (q.has('gesendet')) {
-      zeigen('ok', [text('Danke für Ihre Nachricht. Ich melde mich bei Ihnen.')]);
+      zeigen('ok', [text('Danke für deine Nachricht. Ich melde mich bei dir.')]);
       form.reset();
       form.querySelectorAll('.feld, .zwei, .einv, button[type=submit]').forEach(el => { el.hidden = true; });
     } else {
-      zeigen('fehler', [text('Das hat leider nicht geklappt. Bitte rufen Sie mich an unter '), link(form.dataset.telLink, form.dataset.tel), text(' oder schreiben Sie an '), link('mailto:' + form.dataset.mail, form.dataset.mail), text('.')]);
+      zeigen('fehler', [text('Das hat leider nicht geklappt. Bitte ruf mich an unter '), link(form.dataset.telLink, form.dataset.tel), text(' oder schreib an '), link('mailto:' + form.dataset.mail, form.dataset.mail), text('.')]);
     }
     history.replaceState(null, '', location.pathname + '#schreiben');
     form.scrollIntoView({ behavior: 'auto', block: 'center' });

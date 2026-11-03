@@ -21,10 +21,12 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/favicon-180.png">
-<link rel="preload" href="/assets/font/cormorant-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/font/cormorant-300.woff2" as="font" type="font/woff2" crossorigin media="(min-width:641px)">
+<link rel="preload" href="/assets/font/cormorant-500.woff2" as="font" type="font/woff2" crossorigin media="(max-width:640px)">
 <link rel="preload" href="/assets/font/josefin-var.woff2" as="font" type="font/woff2" crossorigin>
-<style>/* Schriften lokal — keine Verbindung nach draußen. Cormorant Garamond Light (300, wie auf der bisherigen Seite) und Josefin Sans als variable Schrift (300–600). */
+<style>/* Schriften lokal — keine Verbindung nach draußen. Cormorant Garamond Light (300, wie auf der bisherigen Seite) + Medium (500, Überschriften am Handy) und Josefin Sans als variable Schrift (300–600). */
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300;font-display:swap;src:url(/assets/font/cormorant-300.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/font/cormorant-500.woff2) format("woff2")}
 @font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:300;font-display:swap;src:url(/assets/font/cormorant-300i.woff2) format("woff2")}
 @font-face{font-family:"Josefin Sans";font-style:normal;font-weight:100 700;font-display:swap;src:url(/assets/font/josefin-var.woff2) format("woff2")}
 @font-face{font-family:"Cormorant Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:86%;ascent-override:90%;descent-override:26%;line-gap-override:0%}
@@ -567,6 +569,49 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
   .karte-platz{aspect-ratio:auto;min-height:0;padding:28px 16px}
   .wenn li{font-size:1.25rem}
   .cta .oder a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+  /* Hero am Handy: Luft unter dem Kopf (.wrap setzt sonst padding-top auf 0), unten nur so viel, dass der WhatsApp-Knopf frei bleibt */
+  .hero-inhalt{padding-top:112px;padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+  .hero-klein .hero-inhalt{padding-top:112px;padding-bottom:64px}
+  .hero .lead{margin:18px 0 26px}
+  .hero .knoepfe,.cta .knoepfe{flex-direction:column;gap:12px}
+  .hero .knoepfe .btn,.cta .knoepfe .btn{width:100%;justify-content:center}
+  .cta .knoepfe{max-width:340px;margin-inline:auto}
+  .hero-hinweis{margin-top:22px}
+  /* Großbuchstaben-Zeilen dürfen umbrechen, ohne dass die Zeilen ineinanderlaufen */
+  .kicker{line-height:1.55;letter-spacing:.18em;align-items:flex-start}
+  .kicker::before{margin-top:calc(.775em - 3px)}
+  .angebot .unter,.zitat cite,.band cite{line-height:1.5}
+  .text-link{line-height:1.4}
+  /* Lebensphasen auf der Startseite als ruhige Zeilen statt hoher leerer Karten */
+  .lp-raster.klein{gap:10px}
+  .lp-raster.klein .lp-karte{min-height:0}
+  .lp-raster.klein .lp-text{flex-direction:row;align-items:center;gap:16px;padding:16px 64px 16px 16px;min-height:76px}
+  .lp-raster.klein .lp-ico{margin:0;flex:none;width:44px;height:44px}
+  .lp-raster.klein h3{margin:0;font-size:1.3rem;line-height:1.2}
+  .lp-raster.klein .lp-pfeil{top:50%;margin-top:-18px;right:16px}
+  .lp-karte{min-height:0}.lp-text{padding:26px 22px}.lp-karte h3{margin-top:22px}
+  /* Typo-Hierarchie am Handy: Überschrift trägt (Cormorant 500), Fließtext leiser (Josefin 300, dunkler für Kontrast),
+     damit nie eine dünne Überschrift über kleinerem, dickerem Text steht */
+  h1,h2,h3,h4,.wenn li,.menu-flaeche li a,.ak-text h3,.marke b,.zitat blockquote p,.band blockquote p,.faq-frage,.zl .was,.karte-hinweis b,.fuss h3,.wenn-weg li{font-weight:500}
+  .ak-text p,.duo p{color:#3d3d3a}
+  h1{letter-spacing:-.025em}
+  h2{font-size:2rem;line-height:1.12}
+  h3{font-size:1.6rem;line-height:1.16}
+  .ak-text h3{font-size:1.85rem;margin-bottom:14px}
+  body,p,.lead{font-weight:300}
+  body{color:#3d3d3a}
+  p{line-height:1.65}
+  .lead{color:#55554f}
+  .hero .lead,.cta p{font-weight:300}
+  .ak-text p{font-size:17px}
+  .ak-termin{font-weight:500}
+}
+/* Touch: Einblenden ohne Unschärfe-Filter (der ruckelt beim schnellen Scrollen am iPhone), kürzerer Weg */
+@media (hover:none),(max-width:900px){
+  .js .rev{filter:none;translate:0 14px;transition:opacity .45s var(--ease),translate .45s var(--ease)}
+  .js .rev.da{filter:none}
+  .js .rev.v2{transition-delay:.06s}.js .rev.v3{transition-delay:.12s}.js .rev.v4{transition-delay:.18s}.js .rev.v5{transition-delay:.24s}
+  .lp-karte.sb-an{transform:none}
 }
 
 /* ---------- Zugänglichkeit: weniger Bewegung, weniger Transparenz, mehr Kontrast */
@@ -623,7 +668,7 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
   </div>
 </footer>
 <a class="wa-knopf" href="https://wa.me/+4917696582679" target="_blank" rel="noopener" aria-label="Nachricht per WhatsApp"><svg viewBox="0 0 360 362" aria-hidden="true" class="ic ic-marke " width="24" height="24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M307.546 52.566C273.709 18.684 228.706.017 180.756 0 81.951 0 1.538 80.404 1.504 179.235c-.017 31.594 8.242 62.432 23.928 89.609L0 361.736l95.024-24.925c26.179 14.285 55.659 21.805 85.655 21.814h.077c98.788 0 179.21-80.413 179.244-179.244.017-47.898-18.608-92.926-52.454-126.807v-.008Zm-126.79 275.788h-.06c-26.73-.008-52.952-7.194-75.831-20.765l-5.44-3.231-56.391 14.791 15.05-54.981-3.542-5.638c-14.912-23.721-22.793-51.139-22.776-79.286.035-82.14 66.867-148.973 149.051-148.973 39.793.017 77.198 15.53 105.328 43.695 28.131 28.157 43.61 65.596 43.593 105.398-.035 82.149-66.867 148.982-148.982 148.982v.008Zm81.719-111.577c-4.478-2.243-26.497-13.073-30.606-14.568-4.108-1.496-7.09-2.243-10.073 2.243-2.982 4.487-11.568 14.577-14.181 17.559-2.613 2.991-5.226 3.361-9.704 1.117-4.477-2.243-18.908-6.97-36.02-22.226-13.313-11.878-22.304-26.54-24.916-31.027-2.613-4.486-.275-6.91 1.959-9.136 2.011-2.011 4.478-5.234 6.721-7.847 2.244-2.613 2.983-4.486 4.478-7.469 1.496-2.991.748-5.603-.369-7.847-1.118-2.243-10.073-24.289-13.812-33.253-3.636-8.732-7.331-7.546-10.073-7.692-2.613-.13-5.595-.155-8.586-.155-2.991 0-7.839 1.118-11.947 5.604-4.108 4.486-15.677 15.324-15.677 37.361s16.047 43.344 18.29 46.335c2.243 2.991 31.585 48.225 76.51 67.632 10.684 4.615 19.029 7.374 25.535 9.437 10.727 3.412 20.49 2.931 28.208 1.779 8.604-1.289 26.498-10.838 30.228-21.298 3.73-10.46 3.73-19.433 2.613-21.298-1.117-1.865-4.108-2.991-8.586-5.234l.008-.017Z"/></svg><span>WhatsApp</span></a>
-<script src="/main.js?v=51a65df7" onerror="document.documentElement.classList.replace('js','kein-js')"></script>
+<script src="/main.js?v=e4a13ffe" onerror="document.documentElement.classList.replace('js','kein-js')"></script>
 <script src="/assets/sb-zaehler.js" defer></script>
 </body>
 </html>
