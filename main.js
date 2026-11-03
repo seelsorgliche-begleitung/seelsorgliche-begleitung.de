@@ -186,6 +186,11 @@ const nachholen = () => {
   });
 };
 setTimeout(nachholen, 1500); setTimeout(nachholen, 3500);
+/* Anlässe einzeln: jede Zeile erst, wenn sie selbst im unteren Drittel ankommt — kein Vorlauf, keine Sammel-Einblendung */
+const einzelnIo = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('da'); einzelnIo.unobserve(e.target); } });
+}, { rootMargin: '0px 0px -18% 0px', threshold: 0 });
+document.querySelectorAll('.einzeln').forEach(el => ruhig ? el.classList.add('da') : einzelnIo.observe(el));
 
 /* ---------- Karten mit Naturvideo: beim Drübergehen (Maus) oder im Bild (Handy) */
 document.querySelectorAll('.lp-karte, .angebot').forEach(k => {
