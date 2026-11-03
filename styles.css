@@ -629,7 +629,7 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
   .hero .knoepfe{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 20px}
   .hero .knoepfe .btn{width:auto;min-height:46px;padding:12px 20px;font-size:14px;gap:8px}
   .hero .knoepfe .btn-hell{border:0;padding:12px 2px;background:none;text-decoration:underline;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:5px}
-  .hero-hinweis{margin-top:20px;font-size:13px;padding:7px 14px 7px 10px}
+  .hero-hinweis{margin-top:20px;font-size:13px;padding:9px 14px 9px 10px;min-height:44px}
   .h1-ober{margin-bottom:16px}
 }
 @media (max-width:640px){.ober-ort{display:none}}
@@ -637,3 +637,4 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
 header:not(.fest) .header-cta .btn-lila{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.42);box-shadow:none}
 header:not(.fest) .header-cta .btn-lila:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.75)}
 .fuss-marke .fuss-motto{font:300 italic 1.3rem/1.35 var(--serif);color:var(--gold)}
+.hero-hinweis{min-height:44px}
