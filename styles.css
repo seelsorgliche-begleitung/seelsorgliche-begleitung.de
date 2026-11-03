@@ -601,6 +601,6 @@ nav.haupt a.nav-neu::before{content:"";width:7px;height:7px;border-radius:50%;ba
 @media (prefers-contrast:more){header.fest{background:#fff;border-bottom:2px solid var(--tinte)}.lp-karte,.formular,.notiz{border-color:var(--tinte)}}
 
 /* Anlässe: jede Zeile blendet einzeln ein, wenn sie selbst ins Bild kommt */
-.js .einzeln{opacity:0;translate:-10px 0;transition:opacity .55s var(--ease),translate .55s var(--ease)}
+.js .einzeln{opacity:0;translate:-10px 0;transition:opacity .45s var(--ease),translate .45s var(--ease)}
 .js .einzeln.da{opacity:1;translate:none}
 @media (prefers-reduced-motion:reduce){.js .einzeln{opacity:1;translate:none}}
