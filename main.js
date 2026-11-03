@@ -164,7 +164,7 @@ function worteTeilen(knoten) {
         else { const i = document.createElement('i'); i.textContent = t; frag.appendChild(i); }
       });
       n.replaceWith(frag);
-    } else if (n.nodeType === 1 && n.tagName !== 'I' && n.tagName !== 'SVG') worteTeilen(n);
+    } else if (n.nodeType === 1 && n.tagName !== 'I' && n.tagName !== 'SVG' && !n.classList.contains('h1-ober')) worteTeilen(n);
   });
 }
 document.querySelectorAll('.worte, .statement h2').forEach(el => {
