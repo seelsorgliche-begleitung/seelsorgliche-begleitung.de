@@ -638,3 +638,7 @@ header:not(.fest) .header-cta .btn-lila{background:rgba(255,255,255,.08);border:
 header:not(.fest) .header-cta .btn-lila:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.75)}
 .fuss-marke .fuss-motto{font:300 italic 1.3rem/1.35 var(--serif);color:var(--gold)}
 .hero-hinweis{min-height:44px}
+
+/* Motto im Fuß: das Wort wechselt wie → wer → was (Noah, 14.11.2026) */
+.motto-wort{display:inline-block;min-width:1.6em;text-align:center;transition:opacity .45s ease,transform .45s ease}
+.motto-wort.weg{opacity:0;transform:translateY(.3em)}

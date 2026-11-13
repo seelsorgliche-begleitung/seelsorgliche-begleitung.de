@@ -300,3 +300,9 @@ const geladen = () => { document.body.classList.add('geladen'); wegBauen(); scru
 if (document.readyState === 'complete') geladen(); else addEventListener('load', geladen);
 addEventListener('resize', () => { wegBauen(); scrub(); });
 setTimeout(wegMessen, 1500); setTimeout(wegMessen, 4000);
+
+/* ---------- Motto im Fuß: wie → wer → was */
+(() => { const w = document.querySelector('.motto-wort'); if (!w || ruhig) return;
+  const worte = ['wie', 'wer', 'was']; let i = 1;
+  setInterval(() => { w.classList.add('weg');
+    setTimeout(() => { i = (i + 1) % worte.length; w.textContent = worte[i]; w.classList.remove('weg'); }, 450); }, 2600); })();
