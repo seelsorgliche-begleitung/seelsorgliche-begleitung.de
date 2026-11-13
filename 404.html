@@ -681,8 +681,9 @@ header:not(.fest) .header-cta .btn-lila:hover{background:rgba(255,255,255,.16);b
 /* Logo + Name im Fuß führen zur Startseite (Noah, 14.11.2026) */
 .fuss-logo{display:inline-block;color:inherit;text-decoration:none;transition:opacity .3s}
 .fuss-logo:hover,.fuss-logo:focus-visible{opacity:.8}
-/* Hero-Knöpfe am Handy immer untereinander: kein Umbruch, wenn die Schrift nachlädt (CLS /begleitung/, 14.11.2026) */
-@media (max-width:640px){.hero .knoepfe{flex-direction:column;align-items:flex-start}}
+/* Hero-Knöpfe am Handy: Reihe mit Umbruch bleibt (Korrektur 04.11.), der Textlink steht aber fest in der zweiten Zeile —
+   sonst bricht er erst um, wenn Josefin nachlädt, und der Hero springt (CLS 0,207 auf /begleitung/, 14.11.2026) */
+@media (max-width:640px){.hero .knoepfe .btn-hell{flex-basis:100%;justify-content:flex-start}}
 /* Name klein unter der Marke, in der Schrift des Hero-Texts („Wenn das Leben Fragen stellt“), auch am Handy (Noah, 14.11.2026) */
 header .marke b small{display:block;font:300 14px/1.2 var(--sans);letter-spacing:.02em;text-transform:none;margin-top:5px;opacity:.85}
 @media (max-width:640px){header .marke b small{display:block;font-size:13px;margin-top:4px}}
